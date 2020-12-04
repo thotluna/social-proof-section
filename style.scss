@@ -1,0 +1,169 @@
+// variables
+$primary-color-dark: hsl(300, 43%, 22%);
+$accent-color: hsl(333, 80%, 67%);
+$primary-color: hsl(303, 10%, 53%);
+$primry-color-litgh: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+$margin-internal: 1rem;
+$movil: 375px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+
+  background: url("images/bg-pattern-top-desktop.svg") no-repeat 0 0,
+    url("images/bg-pattern-bottom-desktop.svg") no-repeat 50vw, 50vh;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  padding: 20px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: $movil) {
+    margin: 20px auto;
+    background: url("images/bg-pattern-top-mobile.svg") no-repeat 0 0,
+      url("images/bg-pattern-bottom-mobile.svg") no-repeat 0vw, 100vh;
+  }
+
+  .container {
+    max-width: 80%;
+    min-height: 80vh;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr) 5%;
+    gap: 10px;
+    grid-template-areas:
+      "izq der"
+      "sup sup"
+      "foo foo";
+
+    .top-left {
+      // background-color: blue;
+      grid-area: izq;
+      
+      h1 {
+        color: $primary-color-dark;
+        margin-bottom: 2vh;
+      }
+
+      p {
+        color: $primary-color;
+      }
+
+      @media(max-width: $movil){
+        text-align: center;
+      }
+    }
+
+    .top-rigth {
+      // background-color: yellow;
+      grid-area: der;
+      p {
+        color: $primary-color-dark;
+        font-weight: 700;
+      }
+      @media (width: $movil) {
+        padding: 0;
+      }
+    }
+
+    .bottom-div {
+      grid-area: sup;
+      @media (width: $movil) {
+        padding: 0;
+      }
+    }
+
+    .attribution {
+      grid-area: foo;
+    }
+
+    @media (max-width: 375px) {
+      width: 90%;
+      grid-template-rows: repeat(3, auto) 5%;
+      grid-template-areas:
+        "izq izq"
+        "der der"
+        "sup sup"
+        "foo foo";
+    }
+  }
+  .container > div {
+    padding: $margin-internal;
+  }
+
+  .top-rigth > div {
+    background-color: $primry-color-litgh;
+    border-radius: 5px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rate-item-2 {
+    @media (width: $movil) {
+      margin: 20px auto;
+    }
+  }
+
+  .bottom-div > div {
+    background-color: $primary-color-dark;
+    border-radius: 5px;
+    padding: 1rem;
+    .head-card {
+      display: flex;
+      align-items: center;
+      h2 {
+        font-size: 12px;
+        color: $white;
+      }
+      h3 {
+        font-size: 10px;
+        color: $primary-color;
+      }
+
+      .avatar {
+        img {
+          height: 2.5rem;
+          width: auto;
+          border-radius: 100%;
+          margin-right: 20px;
+        }
+      }
+    }
+    .body-card {
+      p {
+        font-size: 10px;
+        line-height: 1.8;
+        color: $white;
+      }
+    }
+  }
+
+  .card-2 {
+    @media (width: $movil) {
+      margin: 20px auto;
+    }
+  }
+
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
