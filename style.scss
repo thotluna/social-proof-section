@@ -50,37 +50,59 @@ body {
     .top-left {
       // background-color: blue;
       grid-area: izq;
-      
+      padding-right: 10vw;
       h1 {
         color: $primary-color-dark;
+        font-size: 38px;
+        font-weight: 700;
         margin-bottom: 2vh;
+        @media(max-width: $movil){
+          font-size: 24px;
+        }
       }
 
       p {
         color: $primary-color;
+        font-size: 18px;
+        @media(max-width: $movil){
+          font-size: 15px;
+        }
       }
 
       @media(max-width: $movil){
         text-align: center;
+        padding-bottom: 0px;
+        padding-right: 1rem;
       }
     }
 
     .top-rigth {
-      // background-color: yellow;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
       grid-area: der;
       p {
         color: $primary-color-dark;
+        font-size: 12px;
         font-weight: 700;
       }
       @media (width: $movil) {
         padding: 0;
+        font-size: 15px;
+        display: block;
       }
     }
 
     .bottom-div {
       grid-area: sup;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
       @media (width: $movil) {
         padding: 0;
+        flex-direction: column;
       }
     }
 
@@ -103,26 +125,44 @@ body {
   }
 
   .top-rigth > div {
+    min-width: 300px;
     background-color: $primry-color-litgh;
     border-radius: 5px;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 3rem;
     display: flex;
-    flex-direction: column;
+    
     align-items: center;
     justify-content: center;
+
+    .star {
+      margin-right: 10px;
+    }
+
+    @media (width: $movil) {
+      flex-direction: column;
+      padding: 1rem 0;
+    }
   }
 
   .rate-item-2 {
+    margin-left: 20px;
     @media (width: $movil) {
       margin: 20px auto;
+    }
+  }
+
+  .rate-item-3 {
+    margin-left: 40px;
+    @media (width: $movil) {
+      margin-left: auto;
     }
   }
 
   .bottom-div > div {
     background-color: $primary-color-dark;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 32px;
+    width: 250px;
     .head-card {
       display: flex;
       align-items: center;
@@ -147,15 +187,28 @@ body {
     .body-card {
       p {
         font-size: 10px;
+        font-weight: 700;
         line-height: 1.8;
         color: $white;
       }
     }
+
+    @media (max-width:$movil) {
+      width: auto;
+    }
   }
 
   .card-2 {
+    margin-top: 20px;
     @media (width: $movil) {
       margin: 20px auto;
+    }
+  }
+
+  .card-3 {
+    margin-top: 40px;
+    @media (width: $movil) {
+      margin: 0 auto;
     }
   }
 
